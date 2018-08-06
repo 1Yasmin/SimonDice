@@ -1,0 +1,27 @@
+.light {
+    border-radius: 30%;
+    opacity: 0.4;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+.light.on {
+    opacity: 1.0;
+    transform: scale(1.05);
+}
+
+.light.small {
+    height: 50px;
+    width: 50px;
+}
+
+.light.medium {
+    height: 100px;
+    width: 100px;
+}
+
+.light.large {
+    height: 200px;
+    width: 200px;
+}

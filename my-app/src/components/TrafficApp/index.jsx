@@ -1,21 +1,17 @@
 import React, { Fragment } from 'react';
-
-import { getRndInteger } from '../../utils/random';
 import TrafficLight from '../TrafficLight';
-
 
 class TrafficApp extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentLight: 0,
       colors: ['green', 'yellow', 'red', 'blue'],
       turnedOnLight: '',
       times: 1,
       sequence: [],
       player: false,
-      playerSecuence: [],
+      playerSequence: [],
     };
 
       // permite que this trabaje 
@@ -26,18 +22,19 @@ class TrafficApp extends React.Component {
 
   _drawSequence() {
     let {sequence } = this.state;
-    console.log(sequence);
-    for(let i = 0; i < sequence.length; i += 1){
-     
+    for (let i = 0; i < sequence.length; i += 1) {
       setTimeout(() => {
-        console.log('sequence')
-           this.setState({ 
-        turnedOnLight: sequence[i],
-      })
-      console.log(sequence[i]);
-      }, 1000);
+        this.setState({
+          turnedOnLight: sequence[i],
+        });
+      }, (i + 1) * 500);
     }
-
+  
+    setTimeout(() => {
+      this.setState({
+        turnedOnLight: null,
+      });
+    },1000);
   }
 
   _validSequence(){

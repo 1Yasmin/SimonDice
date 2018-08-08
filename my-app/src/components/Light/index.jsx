@@ -3,6 +3,7 @@ import React from 'react';
 import './light.css';
 
 
+
 const POSSIBLE_SIZES = [
   'small',
   'medium',
@@ -13,6 +14,7 @@ const Light = ({
   isTurnedOn = false,
   color = 'red',
   size = 'medium',
+  option = (colorOn) => {},
 }) => (
   <div
     className={
@@ -22,6 +24,7 @@ const Light = ({
         ${ isTurnedOn ? 'on' : '' }
       `
     }
+    onClick = {() => {option(color)}}
     style={{
       background: color,
     }}

@@ -8,6 +8,7 @@ const TrafficLight = ({
   colors = ['red', 'yellow', 'green'],
   turnedOnLight = 'red',
   size = 'medium',
+  option = (colorOn)=>{},
 }) => (
   <div className="trafficLight">
     {
@@ -18,6 +19,7 @@ const TrafficLight = ({
             color={color}
             size={size}
             isTurnedOn={color === turnedOnLight}
+            option = {option}
           />
         )
       )

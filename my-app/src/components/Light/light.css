@@ -4,6 +4,7 @@
     transition: 0.5s;
     display: flex;
     flex-direction: column;
+    margin: 1rem;
 }
 
 .light.on {

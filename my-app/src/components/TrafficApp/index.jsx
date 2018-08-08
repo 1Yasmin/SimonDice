@@ -20,17 +20,8 @@ class TrafficApp extends React.Component {
     this._drawSequence = this._drawSequence.bind(this);
     this._validSequence = this._validSequence.bind(this);
     this._paint = this._paint.bind(this);
-    this._start = this._start.bind(this);
   }
   
-  _start() {
-    (new Promise(function(resolve, reject) {
-  })).then(function () {
-      console.log("Promise succeeded");
-  }, function () {
-      console.log("Promise failed");
-  });
-  }
   _changeLight() {
     const{sequence, times, player, colors} = this.state;
     if(!player){
@@ -122,7 +113,7 @@ class TrafficApp extends React.Component {
         size = {this.state.size}  
         option = {this._paint}
          />
-      <button onClick={this._start}>
+      <button onClick={this._changeLight}>
         Start</button>
     </div>);
     }
